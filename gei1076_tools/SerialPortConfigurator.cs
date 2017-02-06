@@ -37,7 +37,7 @@ namespace gei1076_tools
         {
             if (cboSerialPortList.SelectedItem != null)
             {
-                ps.Ouvrir(cboSerialPortList.SelectedItem.ToString());
+                ps.Ouvrir(cboSerialPortList.SelectedItem.ToString(), int.Parse( cboSerialPortSpeed.SelectedItem.ToString()));
                 setStateLabelColor();
             }
         }

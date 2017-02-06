@@ -37,6 +37,8 @@
             this.btnSerialPortClose = new System.Windows.Forms.Button();
             this.btnSerialPortOpen = new System.Windows.Forms.Button();
             this.btnTest = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboSerialPortSpeed = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblState
@@ -62,10 +64,11 @@
             // 
             // chkSerialPortSync
             // 
+            this.chkSerialPortSync.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkSerialPortSync.AutoSize = true;
             this.chkSerialPortSync.Checked = true;
             this.chkSerialPortSync.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSerialPortSync.Location = new System.Drawing.Point(33, 59);
+            this.chkSerialPortSync.Location = new System.Drawing.Point(316, 84);
             this.chkSerialPortSync.Name = "chkSerialPortSync";
             this.chkSerialPortSync.Size = new System.Drawing.Size(87, 17);
             this.chkSerialPortSync.TabIndex = 13;
@@ -134,10 +137,41 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(30, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Vitesse";
+            // 
+            // cboSerialPortSpeed
+            // 
+            this.cboSerialPortSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cboSerialPortSpeed.FormattingEnabled = true;
+            this.cboSerialPortSpeed.Items.AddRange(new object[] {
+            "9600",
+            "14400",
+            "19200",
+            "28800",
+            "38400",
+            "56000",
+            "57600",
+            "115200"});
+            this.cboSerialPortSpeed.Location = new System.Drawing.Point(114, 57);
+            this.cboSerialPortSpeed.Name = "cboSerialPortSpeed";
+            this.cboSerialPortSpeed.Size = new System.Drawing.Size(121, 21);
+            this.cboSerialPortSpeed.TabIndex = 16;
+            this.cboSerialPortSpeed.Text = "9600";
+            // 
             // SerialPortConfigurator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.cboSerialPortSpeed);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.lblEtat);
             this.Controls.Add(this.chkSerialPortSync);
@@ -148,7 +182,7 @@
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnSerialPortOpen);
             this.Name = "SerialPortConfigurator";
-            this.Size = new System.Drawing.Size(422, 96);
+            this.Size = new System.Drawing.Size(422, 114);
             this.Load += new System.EventHandler(this.SerialPortConfigurator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -166,5 +200,7 @@
         private System.Windows.Forms.Button btnSerialPortClose;
         private System.Windows.Forms.Button btnSerialPortOpen;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboSerialPortSpeed;
     }
 }
