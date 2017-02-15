@@ -30,7 +30,6 @@
         {
             this.lblState = new System.Windows.Forms.Label();
             this.lblEtat = new System.Windows.Forms.Label();
-            this.chkSerialPortSync = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboSerialPortList = new System.Windows.Forms.ComboBox();
@@ -61,19 +60,6 @@
             this.lblEtat.Size = new System.Drawing.Size(32, 13);
             this.lblEtat.TabIndex = 14;
             this.lblEtat.Text = "État :";
-            // 
-            // chkSerialPortSync
-            // 
-            this.chkSerialPortSync.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkSerialPortSync.AutoSize = true;
-            this.chkSerialPortSync.Checked = true;
-            this.chkSerialPortSync.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSerialPortSync.Location = new System.Drawing.Point(316, 84);
-            this.chkSerialPortSync.Name = "chkSerialPortSync";
-            this.chkSerialPortSync.Size = new System.Drawing.Size(87, 17);
-            this.chkSerialPortSync.TabIndex = 13;
-            this.chkSerialPortSync.Text = "Synchroniser";
-            this.chkSerialPortSync.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -174,7 +160,6 @@
             this.Controls.Add(this.cboSerialPortSpeed);
             this.Controls.Add(this.lblState);
             this.Controls.Add(this.lblEtat);
-            this.Controls.Add(this.chkSerialPortSync);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboSerialPortList);
@@ -182,7 +167,7 @@
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.btnSerialPortOpen);
             this.Name = "SerialPortConfigurator";
-            this.Size = new System.Drawing.Size(422, 114);
+            this.Size = new System.Drawing.Size(422, 93);
             this.Load += new System.EventHandler(this.SerialPortConfigurator_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -193,7 +178,6 @@
 
         private System.Windows.Forms.Label lblState;
         private System.Windows.Forms.Label lblEtat;
-        private System.Windows.Forms.CheckBox chkSerialPortSync;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboSerialPortList;

@@ -5,3 +5,17 @@ C:\Users\nbourre\odrive\Google_Drive_College\projets\dot_NET\gei1076_tools\gei10
 C:\Users\nbourre\odrive\Google_Drive_College\projets\dot_NET\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.dll
 C:\Users\nbourre\odrive\Google_Drive_College\projets\dot_NET\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.pdb
 C:\Users\nbourre\odrive\Google_Drive_College\projets\dot_NET\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csprojResolveAssemblyReference.cache
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.dll
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.pdb
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.SerialPortConfigurator.resources
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csproj.GenerateResource.Cache
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.dll
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.pdb
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csprojResolveAssemblyReference.cache
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.dll
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.pdb
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csprojResolveAssemblyReference.cache
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.SerialPortConfigurator.resources
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csproj.GenerateResource.Cache
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.dll
+X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.pdb

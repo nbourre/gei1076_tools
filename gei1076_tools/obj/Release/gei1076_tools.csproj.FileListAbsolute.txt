@@ -1,0 +1,6 @@
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Release\gei1076_tools.dll
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\bin\Release\gei1076_tools.pdb
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Release\gei1076_tools.SerialPortConfigurator.resources
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Release\gei1076_tools.csproj.GenerateResource.Cache
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Release\gei1076_tools.dll
+C:\Users\nbourre\Google Drive\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Release\gei1076_tools.pdb
