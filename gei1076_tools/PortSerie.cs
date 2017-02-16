@@ -69,6 +69,9 @@ namespace gei1076_tools
             return false;
         }
 
+
+
+
         public bool EcrireOctet(byte octet)
         {
             if (ouvert == false) return false;
@@ -85,6 +88,28 @@ namespace gei1076_tools
                 MessageBox.Show("Problème de connexion \n" + e.Message);
                 serialPort.Dispose();
             }
+
+            return result;
+        }
+
+        public bool EcrireOctets(byte[] trame, int taille)
+        {
+            if (ouvert == false) return false;
+
+            bool result = false;
+
+            try
+            {
+                serialPort.Write(trame, 0, taille);
+                result = true;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Problème de connexion \n" + e.Message);
+                serialPort.Dispose();
+            }
+
+
 
             return result;
         }

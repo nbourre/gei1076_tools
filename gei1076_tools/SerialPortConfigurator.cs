@@ -47,6 +47,13 @@ namespace gei1076_tools
             return ps;
         }
 
+        public Control[] getControlByName(string name)
+        {
+            if (name == "") return null;
+
+            return Controls.Find(name, true);
+        }
+
         private void setStateLabelColor()
         {
             if (ps.Ouvert)
