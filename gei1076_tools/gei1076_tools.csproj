@@ -47,7 +47,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>images.resx</DependentUpon>
     </Compile>
-    <Compile Include="PortSerie.cs" />
+    <Compile Include="SerialPortViewModel.cs" />
     <Compile Include="SerialPortConfigurator.cs">
       <SubType>UserControl</SubType>
     </Compile>

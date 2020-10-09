@@ -6,14 +6,14 @@ namespace gei1076_tools
 {
     public partial class SerialPortConfigurator: UserControl
     {
-        PortSerie ps;
+        SerialPortViewModel ps;
 
         public SerialPortConfigurator()
         {
             InitializeComponent();
             
 
-            ps = new PortSerie();
+            ps = new SerialPortViewModel();
 
             cboSerialPortList.Items.Clear();
             String[] Ports = System.IO.Ports.SerialPort.GetPortNames();
@@ -42,7 +42,7 @@ namespace gei1076_tools
             }
         }
 
-        public PortSerie getPS()
+        public SerialPortViewModel getPS()
         {
             return ps;
         }
