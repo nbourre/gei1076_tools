@@ -1,4 +1,5 @@
-﻿using System;
+﻿using gei1076_tools.ViewModels;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.IO.Ports;
@@ -6,14 +7,12 @@ using System.Windows.Forms;
 
 namespace gei1076_tools
 {
-    public class SerialPortViewModel : INotifyPropertyChanged
+    public class SerialPortViewModel : BaseViewModel
     {
         private SerialPort serialPort = null;
         private bool opened = false;
 
         byte[] buffer = new byte[8];
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public SerialPortViewModel() {
             serialPort = new SerialPort();
@@ -193,11 +192,6 @@ namespace gei1076_tools
         }
 
 
-        // Permet de lever l'évément de changement de propriété
-        protected void OnPropertyChanged(string name)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
-        }
 
 
 
