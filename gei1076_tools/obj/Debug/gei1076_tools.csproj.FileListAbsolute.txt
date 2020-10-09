@@ -28,3 +28,13 @@ C:\Users\nbourre\odrive\Google_Drive_Perso\_uqtr\GEI-1076\projets\gei1076_tools\
 C:\Users\nbourre\odrive\Google_Drive_Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csprojResolveAssemblyReference.cache
 X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.images.resources
 X:\nbourre\odrive\Google Drive - Perso\_uqtr\GEI-1076\projets\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.Tachymetre.resources
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.dll
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\bin\Debug\gei1076_tools.pdb
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csprojAssemblyReference.cache
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.images.resources
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.SerialPortConfigurator.resources
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.Tachymetre.resources
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csproj.GenerateResource.cache
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.csproj.CoreCompileInputs.cache
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.dll
+D:\_data\projets\_cegep\wpf\gei1076_tools\gei1076_tools\obj\Debug\gei1076_tools.pdb

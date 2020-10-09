@@ -28,7 +28,7 @@ namespace gei1076_tools
 
         void ParentForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            ps.Fermer();
+            ps.Close();
 
             OnHandleDestroyed(new EventArgs());
         }
@@ -37,7 +37,7 @@ namespace gei1076_tools
         {
             if (cboSerialPortList.SelectedItem != null)
             {
-                ps.Ouvrir(cboSerialPortList.SelectedItem.ToString(), int.Parse( cboSerialPortSpeed.SelectedItem.ToString()));
+                ps.Open(cboSerialPortList.SelectedItem.ToString(), int.Parse( cboSerialPortSpeed.SelectedItem.ToString()));
                 setStateLabelColor();
             }
         }
@@ -56,7 +56,7 @@ namespace gei1076_tools
 
         private void setStateLabelColor()
         {
-            if (ps.Ouvert)
+            if (ps.Opened)
             {
                 lblState.BackColor = Color.Green;
             }
@@ -68,7 +68,7 @@ namespace gei1076_tools
 
         private void btnSerialPortClose_Click(object sender, EventArgs e)
         {
-            ps.Fermer();
+            ps.Close();
             setStateLabelColor();
         }
 
@@ -83,7 +83,7 @@ namespace gei1076_tools
                 btnSerialPortOpen.Enabled = true;
             }
 
-            ps.Fermer();
+            ps.Close();
             setStateLabelColor();
         }
 
@@ -94,7 +94,7 @@ namespace gei1076_tools
 
         private void btnTest_Click(object sender, EventArgs e)
         {
-            ps.EcrireOctet(0);
+            ps.WriteByte(0);
         }
     }
 }

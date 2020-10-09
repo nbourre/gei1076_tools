@@ -9,9 +9,9 @@ namespace gei1076_tools
     public class SerialPortViewModel : INotifyPropertyChanged
     {
         private SerialPort serialPort = null;
-        private bool ouvert = false;
+        private bool opened = false;
 
-        byte[] tampon = new byte[8];
+        byte[] buffer = new byte[8];
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -19,13 +19,13 @@ namespace gei1076_tools
             serialPort = new SerialPort();
         }
 
-        public bool Ouvrir(string nomPort = "COM1", int baudRate = 9600)
+        public bool Open(string portName = "COM1", int baudRate = 9600)
         {
-            if (!ouvert)
+            if (!opened)
             {
                 try
                 {
-                    serialPort.PortName = nomPort;
+                    serialPort.PortName = portName;
                     serialPort.BaudRate = baudRate;
                     serialPort.DataBits = 8;
                     serialPort.Parity = Parity.None;
@@ -36,28 +36,28 @@ namespace gei1076_tools
 
                     serialPort.DiscardInBuffer();
 
-                    ouvert = true;
+                    opened = true;
 
                     OnPropertyChanged("Ouvert");
                     return true;
                 }
-                catch (Exception erreur)
+                catch (Exception error)
                 {
-                    MessageBox.Show("Problème à l'ouverture du port " + nomPort + " à la vitesse de " + baudRate + "   " + erreur.Message, "ERREUR !!");
+                    MessageBox.Show("Problème à l'ouverture du port " + portName + " à la vitesse de " + baudRate + "   " + error.Message, "ERREUR !!");
                 }
             }
 
             return false;
         }
 
-        public bool Fermer()
+        public bool Close()
         {
-            if (ouvert == false) return false;
+            if (opened == false) return false;
 
             try
             {
                 serialPort.Close();
-                ouvert = false;
+                opened = false;
                 OnPropertyChanged("Ouvert");
                 return true;
             }
@@ -72,16 +72,16 @@ namespace gei1076_tools
 
 
 
-        public bool EcrireOctet(byte octet)
+        public bool WriteByte(byte _byte)
         {
-            if (ouvert == false) return false;
+            if (opened == false) return false;
 
             bool result = false;
 
             try
             {
-                tampon[0] = octet;
-                serialPort.Write(tampon, 0, 1);
+                buffer[0] = _byte;
+                serialPort.Write(buffer, 0, 1);
                 result = true;
             } catch (Exception e)
             {
@@ -92,15 +92,15 @@ namespace gei1076_tools
             return result;
         }
 
-        public bool EcrireOctets(byte[] trame, int taille)
+        public bool WriteBytes(byte[] frame, int size)
         {
-            if (ouvert == false) return false;
+            if (opened == false) return false;
 
             bool result = false;
 
             try
             {
-                serialPort.Write(trame, 0, taille);
+                serialPort.Write(frame, 0, size);
                 result = true;
             }
             catch (Exception e)
@@ -114,15 +114,15 @@ namespace gei1076_tools
             return result;
         }
 
-        public bool EcrireLigne(string tampon)
+        public bool WriteLine(string buffer)
         {
-            if (ouvert == false) return false;
+            if (opened == false) return false;
 
             bool result = false;
 
             try
             {
-                serialPort.WriteLine(tampon);
+                serialPort.WriteLine(buffer);
                 result = true;
             }
             catch (Exception e)
@@ -135,18 +135,18 @@ namespace gei1076_tools
             return result;
         }
 
-        public int DonneesALire()
+        public int DataToRead()
         {
-            if (ouvert == false) return 0;
+            if (opened == false) return 0;
 
             return this.serialPort.BytesToRead;
 
             
         }
 
-        public bool LireOctet(ref byte octet)
+        public bool ReadByte(ref byte octet)
         {
-            if (ouvert == false) return false;
+            if (opened == false) return false;
 
             try
             {
@@ -161,26 +161,26 @@ namespace gei1076_tools
             return true;
         }
 
-        public bool Ouvert
+        public bool Opened
         {
             get
             {
-                return ouvert;
+                return opened;
             }
         }
 
-        public int LireOctets(byte[] tableau, int decalage, int v)
+        public int ReadBytes(byte[] byteArray, int offset, int count)
         {
 
             // Voir : http://stackoverflow.com/questions/21337123/read-and-store-bytes-from-serial-port
-            if (!ouvert) return -1;
+            if (!opened) return -1;
 
             int result = 0;
 
 
             try
             {
-                result = serialPort.Read(tableau, decalage, v);
+                result = serialPort.Read(byteArray, offset, count);
             }
             catch (Exception e)
             {
