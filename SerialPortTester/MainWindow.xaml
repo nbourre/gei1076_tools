@@ -8,8 +8,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
-        <Views:SerialPortConfigurator/>
+        <TabControl>
+            <TabItem Header="Configuration">
+                <Grid>
+                    <Views:SerialPortConfigurator/>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>

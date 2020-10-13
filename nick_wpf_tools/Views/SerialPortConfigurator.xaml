@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
-             d:DesignHeight="100" d:MinWidth="600"
+             d:DesignHeight="90" d:MinWidth="600"
              MinWidth="600">
     <UserControl.Resources>
         <Style x:Key="allMargins">
@@ -25,46 +25,41 @@
             <b:InvokeCommandAction Command="{Binding LoadedCommand}"/>
         </b:EventTrigger>
     </b:Interaction.Triggers>
-   
-
-        <TabControl>
-            <TabItem Header="Configuration du port série">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Configuration du port série" Grid.ColumnSpan="2"/>
-                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Nom du port"/>
-                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Vitesse"/>
-
-                    <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ComPorts}" SelectedValue="{Binding SelectedComPort}"/>
-                    <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding BaudRates}" SelectedValue="{Binding SelectedBaudRate}"/>
-
-                    <Button Grid.Row="1" Grid.Column="2" Content="Ouvrir" Command="{Binding OpenPortCommand}"/>
-                    <Button Grid.Row="2" Grid.Column="2" Content="Tester" Command="{Binding TestPortCommand}"/>
-                    <Button Grid.Row="1" Grid.Column="3" Content="Fermer" Command="{Binding ClosePortCommand}"/>
-
-                    <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal"
-                        VerticalAlignment="Center">
-                        <TextBlock Text="État:" VerticalAlignment="Center"/>
-                        <TextBox Text="{Binding Status}"/>
-                    </StackPanel>
-
-
-                </Grid>
-            </TabItem>
-        <TabItem Header="Données">
-            <TextBox Text="{Binding ReceivedData}"/>
-        </TabItem>
-        </TabControl>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
         
-        
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Configuration du port série" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Nom du port"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Vitesse"/>
+
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding ComPorts}" SelectedValue="{Binding SelectedComPort}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding BaudRates}" SelectedValue="{Binding SelectedBaudRate}"/>
+
+        <Button Grid.Row="1" Grid.Column="2" Content="Ouvrir" Command="{Binding OpenPortCommand}"/>
+        <Button Grid.Row="2" Grid.Column="2" Content="Tester" Command="{Binding TestPortCommand}"/>
+        <Button Grid.Row="1" Grid.Column="3" Content="Fermer" Command="{Binding ClosePortCommand}"/>
+
+        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal"
+                        VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Text="État:" VerticalAlignment="Center"/>
+            <TextBox Text="{Binding Status}"/>
+        </StackPanel>
+
+
+    </Grid>
+
+
+
+
 </UserControl>

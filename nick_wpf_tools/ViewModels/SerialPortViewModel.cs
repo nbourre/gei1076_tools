@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.IO.Ports;
@@ -95,12 +94,11 @@ namespace nick_wpf_tools.ViewModels
             }
         }
 
-
-
         public DelegateCommand<string> LoadedCommand { get; set; }
         public DelegateCommand<string> OpenPortCommand { get; set; }
         public DelegateCommand<string> ClosePortCommand { get; set; }
         public DelegateCommand<string> TestPortCommand { get; set; }
+        public DelegateCommand<string> ClearReceivedDataCommand { get; set; }
 
         public SerialPortViewModel()
         {
@@ -114,6 +112,7 @@ namespace nick_wpf_tools.ViewModels
             serialPort = new SerialPort();
             BaudRates = new List<string> { "110", " 300", " 600", " 1200", " 2400", " 4800", " 9600", " 14400", " 19200", " 38400", " 57600", " 115200", " 128000", "256000" };
             SelectedBaudRate = "9600";
+            Status = "Closed";
             
         }
 
@@ -123,6 +122,12 @@ namespace nick_wpf_tools.ViewModels
             OpenPortCommand = new DelegateCommand<string>(OpenPort);
             ClosePortCommand = new DelegateCommand<string>(ClosePort, CanClosePort);
             TestPortCommand = new DelegateCommand<string>(TestPort, CanTestPort);
+            ClearReceivedDataCommand = new DelegateCommand<string>(ClearReceivedData);
+        }
+
+        private void ClearReceivedData(string obj)
+        {
+            ReceivedData = string.Empty;
         }
 
         private bool CanTestPort(string obj)
@@ -135,20 +140,36 @@ namespace nick_wpf_tools.ViewModels
             return IsOpen;
         }
 
-        private void TestPort(string obj)
+        private async void TestPort(string obj)
         {
-
             Debug.WriteLine("Test command executed. Not implemented!");
+
+            await Task.Run(() => 
+                Debug.WriteLine("Task running")
+                // Do some code here
+            );
         }
 
         private void ClosePort(string obj)
         {
-            Close();
+            if (Close())
+            {
+                Status = "Closed";
+            } else
+            {
+                Status = "Error";
+            }
         }
 
-        private void OpenPort(string obj)
+        private async void OpenPort(string obj)
         {
-            Open(SelectedComPort, int.Parse(SelectedBaudRate));
+            if (await Open(SelectedComPort, int.Parse(SelectedBaudRate)))
+            {
+                Status = "OPEN";
+            } else
+            {
+                Status = "Error";
+            }
         }
 
         /// <summary>
@@ -160,7 +181,7 @@ namespace nick_wpf_tools.ViewModels
             ComPorts = new ObservableCollection<string>(await Task.Run(()=> SerialPort.GetPortNames()));
         }
 
-        public bool Open(string portName = "COM1", int baudRate = 9600)
+        public async Task<bool> Open(string portName = "COM1", int baudRate = 9600)
         {
             if (!IsOpen)
             {
@@ -174,8 +195,25 @@ namespace nick_wpf_tools.ViewModels
                     serialPort.Handshake = Handshake.None;
                     serialPort.DataReceived += SerialPort_DataReceived;
 
-                    serialPort.Open();
+                    Status = "Opening...";
+                    
+                    var task = Task.Run(() =>
+                    {
+                        try
+                        {
+                            serialPort.Open();
+                        }
+                        catch (Exception e)
+                        {
+                            /// Bypass the task error handling...
+                            /// Must have a better way
+                            /// But for now the job is ok
+                        }
+                    }
+                    );
 
+                    await task;
+                    
                     serialPort.DiscardInBuffer();
 
                     IsOpen = true;
