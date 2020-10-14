@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialPortTester", "SerialP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "nick_wpf_tools", "nick_wpf_tools\nick_wpf_tools.csproj", "{A81E2182-EA51-4BA7-9497-B0AD73512317}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tools_tests", "tools_tests\tools_tests.csproj", "{0F55E215-7142-4ED9-88CB-427D6A75F710}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A81E2182-EA51-4BA7-9497-B0AD73512317}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A81E2182-EA51-4BA7-9497-B0AD73512317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A81E2182-EA51-4BA7-9497-B0AD73512317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F55E215-7142-4ED9-88CB-427D6A75F710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F55E215-7142-4ED9-88CB-427D6A75F710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F55E215-7142-4ED9-88CB-427D6A75F710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F55E215-7142-4ED9-88CB-427D6A75F710}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
